@@ -5,6 +5,10 @@ rails g scaffold *model* *column1*:*data_type* *column2*:*data_type* ... [Ref](h
 
 rails db:migrate
 
+rails g pundit:install
+
+rails g pundit:install user
+
 ## config your homepage in config/routes
 
 ```root 'home#index' <= the # just for the root page```
