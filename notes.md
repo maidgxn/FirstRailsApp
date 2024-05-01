@@ -1,5 +1,9 @@
-## generate a MVC for you :O cool
+## generate a MVC for you
 rails g controller home index
+
+rails g scaffold *model* *column1*:*data_type* *column2*:*data_type* ... [Ref](https://guides.rubyonrails.org/v3.2/migrations.html)
+
+rails db:migrate
 
 ## config your homepage in config/routes
 
