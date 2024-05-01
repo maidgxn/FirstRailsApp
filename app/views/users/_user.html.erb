@@ -1,27 +1,11 @@
 <div id="<%= dom_id user %>">
-  <p>
-    <strong>First name:</strong>
-    <%= user.first_name %>
-  </p>
 
-  <p>
-    <strong>Last name:</strong>
-    <%= user.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
-  </p>
-
-  <p>
-    <strong>Password:</strong>
-    <%= user.password %>
-  </p>
-
-  <p>
-    <strong>Roles:</strong>
-    <%= user.roles %>
-  </p>
+<ul class="list-group">
+  <li class="list-group-item">First Name: <%= user.first_name %></li>
+  <li class="list-group-item">Last Name: <%= user.last_name %></td></li>
+  <li class="list-group-item">Email: <%= user.email %></li>
+  <li class="list-group-item">Password: <%= user.password %></li>
+  <li class="list-group-item">Roles: <%= user.roles %></li>
+</ul>
 
 </div>
