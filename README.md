@@ -23,3 +23,7 @@
 * Preview Email: Letter Opener
 
 Reference video: [Link](https://www.youtube.com/watch?v=fmyvWz5TUWg)
+
+Demo video
+
+[![IMAGE ALT TEXT HERE](demo.mp4)](demo.mp4)
