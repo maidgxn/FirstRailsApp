@@ -1,0 +1,14 @@
+<%= form_for @client , url: clients_path do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email, class:"form-control"%>
+
+  <%= f.label :password %>
+  <%= f.password_field :password,  class:"form-control"%>
+
+ <%= f.label :admin %>
+  <%= f.check_box :admin%>
+<br>
+  <%= f.submit "Create Client", class:"btn btn-outline-success"%>
+<% end %>
+<br>
+<%= link_to "Back", clients_path, class: "btn btn-outline-info" %>

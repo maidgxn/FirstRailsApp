@@ -8,14 +8,18 @@
       <ul class="navbar-nav">
 
         <% if client_signed_in? %>
-                <li class="nav-item">
-          <%= link_to "Users", users_path, class:"nav-link"%>
-        </li>
             <li class="nav-item">
-          <%= link_to "Sign out", destroy_client_session_path, data: { turbo_method: :delete }, class:"nav-link"%>
+          <%= javascript_include_tag "application", 'data-turbolinks-track': 'reload' %>
+          <%= link_to "Sign out", destroy_client_session_path, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"nav-link"%>
         </li>
         <li class="nav-item">
           <%= link_to "Edit Profile", edit_client_registration_path, class:"nav-link"%>
+          <% if current_client.admin? %>
+            <li class="nav-item">
+              <%= link_to "All users", clients_path, class:"nav-link"%>
+            </li>
+          <% end %>
+
           <% else %>
          <li class="nav-item">
           <%= link_to "Sign up", new_client_registration_path, class:"nav-link"%>
