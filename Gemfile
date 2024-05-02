@@ -45,6 +45,7 @@ gem "bootsnap", require: false
 gem "pundit"
 gem "devise"
 gem 'jquery-rails'
+gem "letter_opener", group: :development
 # Use Sass to process CSS
 # gem "sassc-rails"
 

@@ -11,16 +11,13 @@ class ClientsController < ApplicationController
     def update
         @client = Client.find(params[:id])
     
-        if @client.update(client_params)
+        if @client.update(registration_token: nil)
           redirect_to @client, notice: 'Client was successfully updated.'
         else
           render :edit
         end
       end
-      
-      def client_params
-        params.require(:client).permit(:email)
-      end
+
 
     def show
         @client = Client.find(params[:id])
@@ -40,6 +37,7 @@ class ClientsController < ApplicationController
     def create
       @client = Client.new(client_params)
       if @client.save
+        ClientMailer.with(client: @client).registration_email.deliver_now
         redirect_to @client, notice: 'Client was successfully created.'
       else
         render :new

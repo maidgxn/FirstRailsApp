@@ -4,6 +4,7 @@ class Clients::RegistrationsController < Devise::RegistrationsController
     def create
         @client = Client.new(client_params)
         if @client.save
+        ClientMailer.with(client: @client).registration_email.deliver_now
           redirect_to clients_path, notice: 'Client was successfully created.'
         else
           render :new
