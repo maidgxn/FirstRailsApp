@@ -30,18 +30,15 @@ class ClientsController < ApplicationController
     def destroy
         @client = Client.find(params[:id])
         @client.destroy
-    
         redirect_to clients_path, notice: 'Client was successfully deleted.'
     end
 
     def new
       @client = Client.new
-      puts "===================================================="
     end
     
     def create
       @client = Client.new(client_params)
-      puts "+++++++++++++++++++++++++++++++++++++++++++++++"
       if @client.save
         redirect_to @client, notice: 'Client was successfully created.'
       else
