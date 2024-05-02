@@ -9,14 +9,14 @@ class ClientsController < ApplicationController
     end
     
     def update
-        @client = Client.find(params[:id])
+      @client = Client.find(params[:id])
     
-        if @client.update(registration_token: nil)
-          redirect_to @client, notice: 'Client was successfully updated.'
-        else
-          render :edit
-        end
+      if @client.update(client_params)
+        redirect_to @client, notice: 'Client was successfully updated.'
+      else
+        render :edit
       end
+    end
 
 
     def show
